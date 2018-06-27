@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import AddEntry from "./Components/AddEntry";
 import "./App.css";
 
@@ -53,7 +53,6 @@ class App extends Component {
       deadLineDate: "",
       toDo: newArray
     });
-    console.log(toDoList, '###', this.state, 'state');
   };
 
   deleteEntry(index) {
@@ -87,30 +86,22 @@ class App extends Component {
   };
 
   editEntry = () => {
-    // const editedValue = this.state.entryValue;
-    // const editedDate = this.state.deadLineDate;
-    // this.setState({
-    //   toDo[this.index].desc : edited
-    // })
-    const editedDesc = (this.state.toDo[
-      this.index
-    ].desc = this.state.entryValue);
-    const editedDate = (this.state.toDo[
-      this.index
-    ].deadline = this.state.deadLineDate);
-    console.log(toDoList, "ddd");
+    const editedDesc = this.state.entryValue;
+    const editedDate = this.state.deadLineDate;
+    const toDoState = this.state.toDo;
+    toDoState[this.index].desc = editedDesc;
+    toDoState[this.index].deadline = editedDate;
     this.setState({
-      toDo: toDoList,
-      editState: false,
+      toDo: toDoState,
       entryValue: "",
       deadLineDate: "",
+      editState: false
     });
-    console.log(toDoList, '###', this.state, 'state');
   };
 
   showState = () => {
-    console.log(this.state, 'STATEEEEEE');
-  }
+    console.log(this.state, "STATEEEEEE");
+  };
 
   render() {
     return (
@@ -135,9 +126,7 @@ class App extends Component {
                 {toDo.desc}
               </h1>
               <span>{toDo.deadline}</span>
-              <button onClick={() => this.deleteEntry(index)}>
-                Delete Entry
-              </button>
+              <button onClick={() => this.deleteEntry(index)}>Delete Entry</button>
             </div>
           );
         })}
