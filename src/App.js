@@ -86,7 +86,7 @@ class App extends Component {
     });
   };
 
-  editEntry = () => { 
+  editEntry = () => {
     // const editedValue = this.state.entryValue;
     // const editedDate = this.state.deadLineDate;
     // this.setState({
