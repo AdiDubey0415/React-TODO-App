@@ -14,6 +14,11 @@
   color: white;
 }
 
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -22,7 +27,62 @@
   font-size: large;
 }
 
+.wrapper {
+  border: 2px solid black;
+  padding: 2rem;
+  width: 70%;
+  margin: 2rem auto 0 auto;
+}
+
+.userInput {
+  border: 2px solid black;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nameEmail {
+  border: 2px solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nameEmail input {
+  margin: 1rem 0;
+}
+
+.city {
+  border: 2px solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.userDetails {
+  border: 2px solid black;
+  padding: 2rem;
+  width: 40%;
+}
+
+.cities {
+  border: 2px solid black;
+  padding: 2rem;
+  width: 40%;
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,0 +1,30 @@
+App Breakdown ------
+
+App
+
+  UserInput
+    Name-Email
+    City
+
+  UserDetails
+
+  Cities
+
+Data that we need to save ------
+
+User Details that we take
+  Name
+  Email
+  city
+
+List of user Details
+
+List of unique cities
+
+Which Component holding what data?
+
+1. UserInput - name, email, city
+
+3. UserDetails - List of user Details
+
+4. Cities - List of unique cities

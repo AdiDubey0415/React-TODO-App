@@ -1,0 +1,70 @@
+How to create components/types?
+1. Functional - Stateless
+2. State/Class - Stateful
+
+How to send/pass data? - Only through Props
+1. Parent to child => Parent will pass to props to child => number, string, object
+2. Child to parent => Parent will pass to props to child => function
+
+How to save data?
+1. Create local state in a component - Stateful components
+
+How to manipulate the state?
+1. With the "setState" function
+
+On what actions can you change the state?
+1. onClick
+2. onChange
+(basically all events)
+3. Change of props
+
+Where can you "set first time" / "change" the state?
+1. Constructor / or just directly the state property
+2. Any method you Create
+3. In the lifecycle component methods
+
+When does a component re-render?
+1. On change of state
+2. On change of props
+
+What does re-rendering mean?
+1. The render method is called
+
+What is the lifecycle of a component?
+1. Mounting - Constructor, render, componentDidMount
+2. Updating - shouldComponentUpdate, render, componentDidUpdate
+3. Unmounting - componentWillUnmount
+
+Which, what parameters, when do you use the lifecycle methods?
+1. Constructor -> nil -> gets called by default, you can also call it, only once
+2. render -> nil -> every time rendering, re-rendering happens
+3. componentDidMount -> nil -> only after initial render -> you can make api calls, subscribe, setTimeouts, setIntervals here
+4. shouldComponentUpdate -> (nextProps, nextState) -> every time the component is going to re-render, you can decide whether to let it happen or not based on new incoming props and new state that is set
+5. componentDidUpdate -> (prevProps, prevState) -> every time the component is re-rendered(i.e render method is called), you can set the state based on the new props that have come in, but inside a condition
+6. componentWillUnmount -> nil -> you can stop any recursive api calls, unsubscribe, clear timeouts and intervals
+
+
+
+
+======================
+
+1. Conditionally render a component
+2. CSS in JSX
+
+
+
+
+
+=======================
+
+
+
+For redux -
+{ --- Data receiving stage/part
+  1. Create the common set of data from where every component will borrow/get the data(called as the application state)
+  2. Wrap your entire application in a component because only then can you pass the state
+  3. Every component now explicitly has to ask for whatever data it needs
+}
+{ --- Data changing/manipulation stage/part
+  4. You should send new data, or whatever needs to be changed to the state, and change the state, this way, all the component which are using that state as their props will automatically get re-rendered
+}
