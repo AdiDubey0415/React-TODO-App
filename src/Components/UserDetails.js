@@ -1,8 +1,8 @@
 import React from "react";
+// import { connect } from "react-redux";
 
 class UserDetails extends React.Component {
   render() {
-    console.log("This props", this.props);
     return (
       <div className="userDetails">
         User Details
@@ -18,4 +18,16 @@ class UserDetails extends React.Component {
   }
 }
 
+// const getDataFromRedux = (val) => {
+//   console.log("getDataFromRedux here 123", val);
+//   return { userDetails: val.userDetails };
+// }
+
+// const giveActionsToRedux = (dispatch) => {
+//   console.log("giveActionsToRedux here", dispatch);
+//   return { handleNameChange: dispatch, handleEmailChange: dispatch };
+// }
+
+// export default App;
+// export default connect(getDataFromRedux, giveActionsToRedux)(UserDetails);
 export default UserDetails;

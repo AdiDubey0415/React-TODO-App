@@ -1,0 +1,46 @@
+Service Provider End - REDUX
+
+1. Save all the channels at one place
+2. There should be a way for somebody to trigger a
+change in what my channel is showing
+3. There should be a way for me to change what
+i am showing on the channel
+
+1. Save all the channels at one place - Application State
+state: {
+  channelList: []
+}
+
+2. There should be a way for somebody to trigger a change in what my channel is showing
+function - expose that function - to raise/trigger change requests - dispatch function
+
+3. There should be a way for me to change what I am showing on the channel
+function - make the necessary changes, based on the data that dispatch function is bringing in, actions - reducer function
+
+4. Create a package - (state, dispatch) - store - there should be a way to create this store
+
+
+Family End - REACT APPLICATION
+1. Expose the family to the service provider
+2. They should be able to subscribe to my channel, connect with me
+3. There should be for you to raise change requests
+
+1. Expose the family to the service provider
+Somehow wrap/expose the service to the family - Provider Component - to the store that REDUX created
+
+2. They should be able to subscribe to my channel, connect with me
+Through props - get whatever channels they need through props - connect function
+
+3. There should be for you to raise change requests
+Should be able to use the function the service provider gave you ( dispatch function ) to trigger changes, and then send in your "CHANGE REQUEST DETAILS" - actions
+
+
+Family - React APPLICATION
+Service Provider - Redux
+All channels together - APPLICATION STATE
+Family members - Components
+Channels - the data that redux has saved - {}
+
+
+Steps ============>
+1. npm i --save redux react-redux

@@ -4,5 +4,18 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Provider } from 'react-redux';
+import store from './Redux/state';
+
+// export const store = createStore(appReducerFunction);
+console.log("Index.js store", store);
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>
+	, document.getElementById('root')
+);
 registerServiceWorker();
+
+// 1. Expose the family to the service provider
+// Here we will expose the redux STORE, to the react application

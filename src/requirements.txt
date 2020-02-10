@@ -28,3 +28,109 @@ Which Component holding what data?
 3. UserDetails - List of user Details
 
 4. Cities - List of unique cities
+
+
+
+ASSIGNMENT:
+
+# Shopping Cart Assignment
+
+1. Create a static (with static data) web app using React.
+2. Add a static header section
+3. The app will contain 2 vertical sections (columns).
+4. The left column will have a list of items with:
+   1. item name
+   2. cost
+   3. Add to cart button
+5. The right column will contain the dynamic cart which will contain the list of added items and the total cost of all cart items.
+6. In the right column, against every item, there should be a button to remove the item from cart.
+9. Both left(item-list) and right(cart) sections should be individually scrollable if the list of items in either exceeds the viewport.
+10. A checkout button at the bottom of the cart which should clear the cart.
+
+
+
+On the other end - REDUX
+1. A way to save all the channels at one place - state
+2. A way to trigger a change, to trigger a change about what the channels are showing - dispatch function(accepting actions)
+3. A way to then change what the channels are showing - reducers
+4. You need to finally group all these together and make a package and expose it to the family - store
+
+On the other end - REACT
+1. A way to expose the entire package of things to all the family members - provider
+2. A way for them to then connect to this package - connect
+3. Once they connect, a way for them to make use/get access to all the channels inside the package - mapstatetoprops
+4. A way for the members to request for a change in what the channels are showing - dispatching actions through the dispatch function
+
+Scenarios -
+1. Multiple family members are seeing the same channel, coming from the same place, so anybody if they change what the channel is showing, those members will also see those changes then
+2. No one needs to ask anything from anyone now
+
+
+Channels - Data inside state
+Members - Components
+Redux - Service provider (Cable service provider)
+
+Channel 1 - Program A
+Channel 2 - Program B
+Channel 3 - Program C
+Channel 4 - Program D
+Channel 5 - Program E
+
+
+
+items: [
+  {
+    name: "Mango",
+    price: 10
+  },
+  {
+    name: "Banana",
+    price: 20
+  },
+  {
+    name: "Papaya",
+    price: 30
+  }
+]
+cartItems: [
+  {
+    name: "Banana",
+    price: 20
+  },
+  {
+    name: "Papaya",
+    price: 30
+  }
+]
+totalValue: 50
+
+
+Assignment -
+
+The classic To-Do application where a user can write down all the things he wants to accomplish.
+
+User Stories -
+1. User can see an input field where he can type in a to-do item, along with a deadline for the to-do.
+2. By pressing enter (or a button), the User can submit the to-do item and can see that being added to a list of to-do’s
+3. User can mark a to-do as completed
+4. User can remove a to-do item by pressing on a button (or on the to-do item itself)
+5. User can edit a to-do
+6. There should be a dropdown next to the input with three options, "ALL", "COMPLETED", "ACTIVE"
+User can see a list with all the completed to-do’s.
+User can see a list with all the active to-do’s
+User can see a list with all the to-do’s
+User can see the date when he created the to-do
+7. The completed to-do's should be displayed in green color, the active ones in red colour.
+
+Read About -
+1. What is Redux? What is it used for?
+2. Is redux related to react, or is it independent? With which all other frameworks can we use redux?
+3. How does redux work? How does it connect with or work with react?
+4. What are pure functions? What is a reducer?
+5. What are actions?
+https://egghead.io/courses/getting-started-with-redux
+
+Read About react some more, get your basics strengthened through this 
+https://egghead.io/courses/the-beginner-s-guide-to-react
+
+P.S - Both courses are free and open to everyone
