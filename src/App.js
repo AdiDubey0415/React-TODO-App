@@ -3,12 +3,9 @@ import UserInput from "./Components/UserInput";
 import UserDetails from "./Components/UserDetails";
 import Cities from "./Components/Cities";
 import "./App.css";
+import { connect } from "react-redux";
 
 class App extends React.Component {
-  state = { 
-    userDetails: [],
-    cities: []
-  }
 
   addUserDataToList = (user) => {
     let users = this.state.userDetails.slice();
@@ -23,20 +20,26 @@ class App extends React.Component {
     });
   }
 
+  handleInputChange = (value) => {
+    this.setState({
+      name: value
+    });
+  }
+
   render() {
     return (
       <div className="wrapper">
-        App
         <UserInput getUserData={(user) => this.addUserDataToList(user)} />
         <div className="lists">
-          <UserDetails userDetails={this.state.userDetails} />
-          <Cities cities={this.state.cities} />
+          <UserDetails />
+          <Cities />
         </div>
       </div>
     );
   }
 }
 
+export default App;
 
 /*
 Two aspects to the connect function, two jobs it has to do - give data from redux to the component and give actions from react to redux
@@ -53,8 +56,14 @@ So, the connect function has two jobs to be done -
 2. Take the actions from the react components to the redux reducers.
 */
 
-export default App;
+// export default App;
 
+
+{/* <input type="text" 
+        placeholder="Type your name here"
+        value={this.props.name}
+        onChange={(event) => this.props.dispatch({ type: "change_user_name", payload: event.target.value })}
+        /> */}
 
 
 

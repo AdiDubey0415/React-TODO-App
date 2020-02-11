@@ -1,13 +1,14 @@
 import React from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 class UserDetails extends React.Component {
   render() {
+    console.log("Userdetails props", this.props);
     return (
       <div className="userDetails">
         User Details
         <ul>
-          { this.props.userDetails.map((user, index) => {
+          { this.props.userDetails && this.props.userDetails.map((user, index) => {
             return (
               <li key={index}>{user.name} --- {user.email} --- {user.city}</li>
             );
@@ -17,6 +18,19 @@ class UserDetails extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    userDetails: state.userDetails
+  };
+}
+
+export default connect(mapStateToProps)(UserDetails);
+
+
+
+
+
 
 // const getDataFromRedux = (val) => {
 //   console.log("getDataFromRedux here 123", val);
@@ -30,4 +44,4 @@ class UserDetails extends React.Component {
 
 // export default App;
 // export default connect(getDataFromRedux, giveActionsToRedux)(UserDetails);
-export default UserDetails;
+// export default UserDetails;

@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import store from './Redux/state';
 
 // export const store = createStore(appReducerFunction);
-console.log("Index.js store", store);
 ReactDOM.render(
 	<Provider store={store}>
 		<App />

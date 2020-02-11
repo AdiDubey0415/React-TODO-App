@@ -1,16 +1,17 @@
 import React from "react";
 import NameEmail from "./NameEmail";
 import City from "./City";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 class UserInput extends React.Component {
   render() {
+    console.log("UserINout props", this.props);
     return (
       <div className="userInput">
         UserInput
         <NameEmail />
         <City />
-        <button onClick={() => this.props.getUserData(this.state)}>Submit</button>
+        <button onClick={() => this.props.dispatch({ type: "add_user_data" })}>Submit</button>
       </div>
     );
   }
@@ -26,5 +27,5 @@ class UserInput extends React.Component {
 //   return { addUserData: dispatch };
 // }
 
-// export default connect(null, giveActionsToRedux)(UserInput);
-export default UserInput;
+export default connect()(UserInput);
+// export default UserInput;
