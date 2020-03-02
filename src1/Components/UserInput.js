@@ -17,15 +17,4 @@ class UserInput extends React.Component {
   }
 }
 
-// const getDataFromRedux = (val) => {
-//   console.log("getDataFromRedux here", val);
-//   return { name: val.name, email: val.email };
-// }
-
-// const giveActionsToRedux = (dispatch) => {
-//   console.log("giveActionsToRedux here", dispatch);
-//   return { addUserData: dispatch };
-// }
-
 export default connect()(UserInput);
-// export default UserInput;

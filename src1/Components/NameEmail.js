@@ -21,7 +21,6 @@ class NameEmail extends React.Component {
   }
 
   render() {
-    // console.log("NameEmail props", this.props);
     return (
       <div className="nameEmail">
         NameEmail
