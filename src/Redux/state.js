@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from "redux";
+import thunk from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 
 /*
 
@@ -7,16 +8,66 @@ import { createStore, combineReducers } from "redux";
 3. Create a store based on the reducer function - Package - State, reducer function, dispatch
 
 */
+
+let todos = [
+  {
+    name: "Todo1",
+    user: "Amit",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo2",
+    user: "Amit",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo3",
+    user: "Amit",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo1",
+    user: "Ayush",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo2",
+    user: "Ayush",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo3",
+    user: "Ayush",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo1",
+    user: "John",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo2",
+    user: "John",
+    deadline: "03/05/2020"
+  },
+  {
+    name: "Todo3",
+    user: "John",
+    deadline: "03/05/2020"
+  },
+]
+
 let appState = {
   todo: { name: "", user: "Amit", deadline: "" },
-  users: ["Amit", "Maninder", "John", "William", "Ayush"],
-  todos: [], // all - 20, john - 4, ayush - 4, all - 20
-  // todosCopy: [], // 20
+  users: ["All", "Amit", "Maninder", "John", "William", "Ayush"],
+  todos: todos,
+  todosCopy: todos,
   selectedUser: ""
 }
 
 function appReducer(state = appState, action) {
   let stateCopy = JSON.parse(JSON.stringify(state));
+  console.log("Actions here", action);
   switch(action.type) {
     case "SetUser":
       stateCopy.todo.user = action.payload;
@@ -25,14 +76,24 @@ function appReducer(state = appState, action) {
     case "SetTodoName":
       stateCopy.todo.name = action.payload;
       return stateCopy;
+
+    case "SetUserTodos":
+      let todosCopy = stateCopy.todosCopy.slice();
+      if (action.payload == "All") {
+        stateCopy.todos = todosCopy
+      } else {
+        todosCopy = todosCopy.filter(todo => todo.user == action.payload);
+        stateCopy.todos = todosCopy;
+      }
+      return stateCopy;
   }
   return state;
 }
 
-const reduxState = combineReducers({
+const rootReducers = combineReducers({
   app: appReducer
 });
 
-const store = createStore(reduxState);
+const store = createStore(rootReducers, applyMiddleware(thunk));
 
 export default store;
